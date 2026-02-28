@@ -10,11 +10,11 @@ import (
 
 	"golang.org/x/term"
 
-	"github.com/cyclops/git-credential-org/internal/config"
-	"github.com/cyclops/git-credential-org/internal/protocol"
-	"github.com/cyclops/git-credential-org/internal/provider"
-	"github.com/cyclops/git-credential-org/internal/resolver"
-	"github.com/cyclops/git-credential-org/internal/store"
+	"github.com/imcitius/git-credential-org/internal/config"
+	"github.com/imcitius/git-credential-org/internal/protocol"
+	"github.com/imcitius/git-credential-org/internal/provider"
+	"github.com/imcitius/git-credential-org/internal/resolver"
+	"github.com/imcitius/git-credential-org/internal/store"
 )
 
 type Handler struct {

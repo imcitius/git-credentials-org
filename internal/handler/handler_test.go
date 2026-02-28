@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cyclops/git-credential-org/internal/config"
-	"github.com/cyclops/git-credential-org/internal/store"
+	"github.com/imcitius/git-credential-org/internal/config"
+	"github.com/imcitius/git-credential-org/internal/store"
 )
 
 type mockStore struct {

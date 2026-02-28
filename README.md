@@ -16,14 +16,30 @@ When working across multiple organizations on the same platform (e.g., `gitlab.c
 
 ## Installation
 
+### Homebrew (macOS)
+
+```bash
+brew install imcitius/tap/git-credential-org
+```
+
 ### Build from source
 
 ```bash
+go install github.com/imcitius/git-credential-org/cmd/git-credential-org@latest
+```
+
+Or clone and build:
+
+```bash
+git clone https://github.com/imcitius/git-credential-org.git
+cd git-credential-org
 go build -o git-credential-org ./cmd/git-credential-org
 sudo mv git-credential-org /usr/local/bin/
 ```
 
 ### Quick setup
+
+After installing, run:
 
 ```bash
 git-credential-org install
@@ -35,10 +51,11 @@ This will:
 
 ### Manual setup
 
-Add to your `~/.gitconfig`:
+Add to your `~/.gitconfig` (the empty `helper =` line clears any previously configured helpers):
 
 ```ini
 [credential]
+    helper =
     helper = /usr/local/bin/git-credential-org
     useHttpPath = true
 ```

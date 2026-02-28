@@ -1,0 +1,57 @@
+version: 2
+
+project_name: git-credential-org
+
+builds:
+  - main: ./cmd/git-credential-org
+    binary: git-credential-org
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X main.version={{.Version}}
+
+archives:
+  - format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+      - LICENSE
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^ci:"
+      - "^chore:"
+
+release:
+  github:
+    owner: imcitius
+    name: git-credential-org
+
+homebrew_casks:
+  - name: git-credential-org
+    repository:
+      owner: imcitius
+      name: homebrew-tap
+      token: "{{ .Env.GH_PAT }}"
+    directory: Casks
+    commit_msg_template: "chore: update {{ .ProjectName }} to {{ .Tag }}"
+    homepage: "https://github.com/imcitius/git-credential-org"
+    description: "Git credential helper that resolves credentials by organization namespace"
+    license: "MIT"
+    hooks:
+      post:
+        install: |
+          system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/git-credential-org"]
