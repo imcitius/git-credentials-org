@@ -39,7 +39,7 @@ changelog:
 release:
   github:
     owner: imcitius
-    name: git-credential-org
+    name: git-credentials-org
 
 homebrew_casks:
   - name: git-credential-org
@@ -49,7 +49,7 @@ homebrew_casks:
       token: "{{ .Env.GH_PAT }}"
     directory: Casks
     commit_msg_template: "chore: update {{ .ProjectName }} to {{ .Tag }}"
-    homepage: "https://github.com/imcitius/git-credential-org"
+    homepage: "https://github.com/imcitius/git-credentials-org"
     description: "Git credential helper that resolves credentials by organization namespace"
     license: "MIT"
     hooks:
