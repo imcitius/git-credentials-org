@@ -10,11 +10,11 @@ import (
 
 	"golang.org/x/term"
 
-	"github.com/imcitius/git-credential-org/internal/config"
-	"github.com/imcitius/git-credential-org/internal/protocol"
-	"github.com/imcitius/git-credential-org/internal/provider"
-	"github.com/imcitius/git-credential-org/internal/resolver"
-	"github.com/imcitius/git-credential-org/internal/store"
+	"github.com/imcitius/git-credentials-org/internal/config"
+	"github.com/imcitius/git-credentials-org/internal/protocol"
+	"github.com/imcitius/git-credentials-org/internal/provider"
+	"github.com/imcitius/git-credentials-org/internal/resolver"
+	"github.com/imcitius/git-credentials-org/internal/store"
 )
 
 type Handler struct {
@@ -169,6 +169,6 @@ func (h *Handler) promptForCredentials(prov provider.Provider, namespace string)
 
 func (h *Handler) log(format string, args ...any) {
 	if h.verbose {
-		fmt.Fprintf(os.Stderr, "[git-credential-org] "+format+"\n", args...)
+		fmt.Fprintf(os.Stderr, "[git-credentials-org] "+format+"\n", args...)
 	}
 }

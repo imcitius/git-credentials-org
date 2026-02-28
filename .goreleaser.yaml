@@ -1,10 +1,10 @@
 version: 2
 
-project_name: git-credential-org
+project_name: git-credentials-org
 
 builds:
-  - main: ./cmd/git-credential-org
-    binary: git-credential-org
+  - main: ./cmd/git-credentials-org
+    binary: git-credentials-org
     goos:
       - darwin
       - linux
@@ -42,7 +42,7 @@ release:
     name: git-credentials-org
 
 homebrew_casks:
-  - name: git-credential-org
+  - name: git-credentials-org
     repository:
       owner: imcitius
       name: homebrew-tap
@@ -55,4 +55,4 @@ homebrew_casks:
     hooks:
       post:
         install: |
-          system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/git-credential-org"]
+          system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/git-credentials-org"]

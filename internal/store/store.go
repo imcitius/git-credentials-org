@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/imcitius/git-credential-org/internal/config"
+	"github.com/imcitius/git-credentials-org/internal/config"
 )
 
 var ErrNotFound = errors.New("credentials not found")

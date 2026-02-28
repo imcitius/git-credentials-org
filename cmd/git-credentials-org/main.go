@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/imcitius/git-credential-org/internal/config"
-	"github.com/imcitius/git-credential-org/internal/handler"
+	"github.com/imcitius/git-credentials-org/internal/config"
+	"github.com/imcitius/git-credentials-org/internal/handler"
 )
 
 var version = "dev"
@@ -19,8 +19,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	verbose := os.Getenv("GIT_CREDENTIAL_ORG_DEBUG") == "1"
-	configPath := os.Getenv("GIT_CREDENTIAL_ORG_CONFIG")
+	verbose := os.Getenv("GIT_CREDENTIALS_ORG_DEBUG") == "1"
+	configPath := os.Getenv("GIT_CREDENTIALS_ORG_CONFIG")
 	if configPath == "" {
 		configPath = config.DefaultConfigPath()
 	}
@@ -51,7 +51,7 @@ func main() {
 		fmt.Fprintln(os.Stderr, "list: not yet implemented (requires backend-specific enumeration)")
 		os.Exit(1)
 	case "version", "--version":
-		fmt.Printf("git-credential-org %s\n", version)
+		fmt.Printf("git-credentials-org %s\n", version)
 	case "help", "--help", "-h":
 		printUsage()
 	default:
@@ -140,27 +140,27 @@ provider = "github"
 		}
 	}
 
-	fmt.Fprintf(os.Stderr, "Installed git-credential-org as global credential helper.\n")
+	fmt.Fprintf(os.Stderr, "Installed git-credentials-org as global credential helper.\n")
 	fmt.Fprintf(os.Stderr, "  helper: %s\n", self)
 	fmt.Fprintf(os.Stderr, "  config: %s\n", configPath)
 }
 
 func printUsage() {
-	fmt.Fprintf(os.Stderr, `git-credential-org %s
+	fmt.Fprintf(os.Stderr, `git-credentials-org %s
 
 A Git credential helper that resolves credentials by organization namespace.
 
 Usage:
-  git-credential-org <get|store|erase>   Git credential helper operations
-  git-credential-org install             Configure git to use this helper
-  git-credential-org version             Print version
-  git-credential-org help                Print this help
+  git-credentials-org <get|store|erase>   Git credential helper operations
+  git-credentials-org install             Configure git to use this helper
+  git-credentials-org version             Print version
+  git-credentials-org help                Print this help
 
 Flags:
-  --verbose, -v    Enable debug logging (also: GIT_CREDENTIAL_ORG_DEBUG=1)
+  --verbose, -v    Enable debug logging (also: GIT_CREDENTIALS_ORG_DEBUG=1)
 
 Environment:
-  GIT_CREDENTIAL_ORG_CONFIG   Path to config file (default: ~/.config/git-credential-org/config.toml)
-  GIT_CREDENTIAL_ORG_DEBUG    Set to "1" to enable debug logging
+  GIT_CREDENTIALS_ORG_CONFIG   Path to config file (default: ~/.config/git-credentials-org/config.toml)
+  GIT_CREDENTIALS_ORG_DEBUG    Set to "1" to enable debug logging
 `, version)
 }

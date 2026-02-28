@@ -1,4 +1,4 @@
-module github.com/imcitius/git-credential-org
+module github.com/imcitius/git-credentials-org
 
 go 1.24.2
 

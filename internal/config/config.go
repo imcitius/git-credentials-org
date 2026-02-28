@@ -31,10 +31,10 @@ type BackendConfig struct {
 
 func DefaultConfigPath() string {
 	if xdg := os.Getenv("XDG_CONFIG_HOME"); xdg != "" {
-		return filepath.Join(xdg, "git-credential-org", "config.toml")
+		return filepath.Join(xdg, "git-credentials-org", "config.toml")
 	}
 	home, _ := os.UserHomeDir()
-	return filepath.Join(home, ".config", "git-credential-org", "config.toml")
+	return filepath.Join(home, ".config", "git-credentials-org", "config.toml")
 }
 
 func Load(path string) (*Config, error) {

@@ -22,7 +22,7 @@ func (o *OnePasswordStore) Name() string {
 }
 
 func (o *OnePasswordStore) itemTitle(namespace string) string {
-	return "git-credential-org: " + namespace
+	return "git-credentials-org: " + namespace
 }
 
 func (o *OnePasswordStore) Get(namespace string) (*Credential, error) {

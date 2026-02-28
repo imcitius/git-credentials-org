@@ -7,7 +7,7 @@ import (
 	"github.com/zalando/go-keyring"
 )
 
-const keychainServicePrefix = "git-credential-org"
+const keychainServicePrefix = "git-credentials-org"
 const keychainAccount = "credentials"
 
 type KeychainStore struct{}
@@ -21,7 +21,7 @@ func (k *KeychainStore) Name() string {
 }
 
 // serviceName returns a per-namespace service name so each entry is
-// visually distinct in Keychain Access, e.g. "git-credential-org:gitlab.com/org1".
+// visually distinct in Keychain Access, e.g. "git-credentials-org:gitlab.com/org1".
 func (k *KeychainStore) serviceName(namespace string) string {
 	return keychainServicePrefix + ":" + namespace
 }
